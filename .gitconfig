@@ -1,0 +1,17 @@
+[user]
+	email = maxvestrand@gmail.com
+	name = Max Vestrand
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[credential]
+	helper = cache
+[mergetool "unityyamlmerge"]
+	trustExitCode = false
+	cmd = 'C:\\Program Files\\Unity\\Hub\\Editor\\2020.3.24f1\\Editor\\Data\\Tools\\UnityYAMLMerge.exe' merge -p "$BASE" "$REMOTE" "$LOCAL" "$MERGED"
+[merge]
+    tool = unityyamlmerge
+[core]
+	autocrlf = true
