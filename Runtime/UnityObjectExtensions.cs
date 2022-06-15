@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MVest {
+namespace MVest.Unity {
 
 
     public static class UnityObjectExtensions {

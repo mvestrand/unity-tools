@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace MVest{
+namespace MVest.Unity {
 
 public static class GameObjectExtensions
 {
