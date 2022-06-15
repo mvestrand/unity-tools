@@ -4,6 +4,9 @@ namespace MVest{
 
 public static class GameObjectExtensions
 {
+    /// <summary>
+    /// Get the full path of the game object in the scene hierarchy. 
+    /// </summary>
     public static string HierarchyName(this GameObject obj) {
         if (obj == null)
                 return "null";
@@ -17,6 +20,10 @@ public static class GameObjectExtensions
         return path;
     }
 
+
+    /// <summary>
+    /// Activate the game object and all it's parents.
+    /// </summary>
     public static void SetActiveInHierarchy(this GameObject obj) {
         obj.SetActive(true);
         Transform parent = obj.transform.parent;
