@@ -12,6 +12,17 @@ namespace MVest.Unity.OdinInspector {
     /// Dummy Odin Inspector attribute
     /// </summary>
     public class DrawWithUnityAttribute : System.Attribute { }
+
+    /// <summary>
+    /// Dummy Odin Inspector attribute
+    /// </summary>
+    public class ShowInInspectorAttribute : System.Attribute { }
+
+    /// <summary>
+    /// Dummy Odin Inspector attribute
+    /// </summary>
+    public class FoldoutGroupAttribute : System.Attribute { public FoldoutGroupAttribute(string s) {} }
+
 }
 
 #endif
