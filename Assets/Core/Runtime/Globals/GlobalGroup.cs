@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MVest.Unity.Global {
+namespace MVest.Unity.Globals {
 
     /// <summary>
     /// UNTESTED. A global group of variables of type T.

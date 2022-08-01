@@ -7,7 +7,7 @@ using Sirenix.OdinInspector;
 using MVest.Unity.OdinInspector;
 #endif
 
-namespace MVest.Unity.Global {
+namespace MVest.Unity.Globals {
 	/// <summary>
   /// A global variable of type T stored as a Unity ScriptableObject.
   /// </summary>

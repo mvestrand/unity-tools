@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 
-namespace MVest.Unity.Global {
+namespace MVest.Unity.Globals {
 
 	/// <summary>
   /// A global variable of type UnityEngine.Object
