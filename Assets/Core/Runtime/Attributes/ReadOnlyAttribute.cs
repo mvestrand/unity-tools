@@ -2,7 +2,7 @@ using System;
 
 using UnityEngine;
 
-namespace MVest {
+namespace MVest.Unity {
 
 [AttributeUsage(AttributeTargets.Field)]
 public class ReadOnlyAttribute : PropertyAttribute {}

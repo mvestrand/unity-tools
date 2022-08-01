@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+namespace MVest.Unity {
+
 [AttributeUsage(AttributeTargets.Class, Inherited = false)]
 public sealed class CreateUniqueAssetAttribute : ExecuteInEditorAfterAssemblyAttribute {
 
@@ -16,3 +18,6 @@ public sealed class CreateUniqueAssetAttribute : ExecuteInEditorAfterAssemblyAtt
     public string Path { get { return path; } }
 
 }
+
+}
+

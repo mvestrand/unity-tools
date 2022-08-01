@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-namespace MVest {
+namespace MVest.Unity {
 
 
     class ExecuteInEditorAfterAssembly {

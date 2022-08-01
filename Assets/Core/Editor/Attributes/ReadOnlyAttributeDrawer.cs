@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 
 
-namespace MVest {
+namespace MVest.Unity {
 
 [CustomPropertyDrawer(typeof(ReadOnlyAttribute))]
 public class ReadOnlyDrawer : PropertyDrawer {

@@ -3,10 +3,15 @@ using System;
 using UnityEngine;
 using UnityEditor;
 
+
+#if ODIN_INSPECTOR
+
 using Sirenix.OdinInspector.Editor;
 
+#endif
 
-namespace MVest {
+
+namespace MVest.Unity {
 
 [CustomPropertyDrawer(typeof(NotNullAttribute))]
 public class NotNullDrawer : PropertyDrawer
@@ -28,6 +33,10 @@ public class NotNullDrawer : PropertyDrawer
     }
 }
 
+
+
+#if ODIN_INSPECTOR
+
 public class NotNullOdinDrawer : OdinAttributeDrawer<NotNullAttribute>
 {
 
@@ -48,5 +57,9 @@ public class NotNullOdinDrawer : OdinAttributeDrawer<NotNullAttribute>
 
     }
 }
+
+#endif
+
+
 
 }
