@@ -4,6 +4,10 @@ using UnityEngine;
 
 namespace MVest.Unity.Global {
 
+    /// <summary>
+    /// UNTESTED. A global group of variables of type T.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class GlobalGroup<T> : ScriptableObject
     {
         private event Action<T> onAdd;
