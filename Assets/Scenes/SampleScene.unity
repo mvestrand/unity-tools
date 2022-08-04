@@ -415,7 +415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testIObject:
-    _value: {fileID: 0}
+    _value: {fileID: 5120682}
 --- !u!4 &1087747352
 Transform:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ using UnityEditor;
 namespace MVest.Unity {
 
 [CustomPropertyDrawer(typeof(RequireInterfaceAttribute))]
-public class RequireInterfaceDrawer : PropertyDrawer {
+public class RequireInterfaceAttributeDrawer : PropertyDrawer {
 
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label) {
         
