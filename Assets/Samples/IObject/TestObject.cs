@@ -4,24 +4,39 @@ using UnityEngine;
 
 public class TestObject : MonoBehaviour
 {
-  // [SerializeField]
-  // [MVest.Unity.RequireInterface(typeof(ITestInterface))]
-  // private Object test;
+	// [SerializeField]
+	// [MVest.Unity.RequireInterface(typeof(ITestInterface))]
+	// private Object test;
 
 
-    [SerializeField]
-    private MVest.Unity.IObject<ITestInterface> testIObject;
+		[SerializeField]
+		private MVest.Unity.IObject<ITestInterface> testIObject;
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        Debug.Log(testIObject.GetType().ToString());
-    }
+		// Start is called before the first frame update
+		void Start()
+		{
+			var tmp = testIObject;
+			Debug.Log(testIObject.i?.TestMsg());
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+			testIObject.i = new TestManagedObject();
+			Debug.Log(testIObject.i?.TestMsg()); // Should be null
+			testIObject = tmp;
+
+			Debug.Log(testIObject.i?.TestMsg());
+
+		}
+
+		// Update is called once per frame
+		void Update()
+		{
+				
+		}
+}
+
+
+public class TestManagedObject : ITestInterface {
+	public string TestMsg() {
+		return "Hello from managed object";
+	}
 }
