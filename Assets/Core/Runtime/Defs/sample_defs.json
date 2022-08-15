@@ -1,0 +1,38 @@
+[
+    {
+        "@pack":"coredefs_01",
+        "version": "0.0.1",
+        "using":"",
+        "namespace": "core",
+        "declare": [
+            {"@tag":"flammable"},
+            {"@tag":"weapon"},
+            {"@tag":"equippable"},
+            {"@class":"melee_weapon", "abstract":true},
+            {"@class":"ranged_weapon", "abstract":true},
+            {"@class":"longsword", "prototype":"melee_weapon"},
+            {"@class":"pistol", "prototype":"ranged_weapon"},
+            {"@class":"gunblade", "prototype":["melee_weapon","ranged_weapon"]}
+        ]
+    },
+    {
+        "_comment":"Alternative format?",
+        "@":"pack",
+        "name":"coredefs_01",
+        "version": "0.0.1",
+        "using":"",
+        "namespace": "core",
+        "declare": [
+            {"@":"tag", "name":"flammable"},
+            {"@":"tag", "name":"weapon"},
+            {"@":"tag", "name":"equippable"},
+            {"@":"class", "name":"melee_weapon", "abstract":true},
+            {"@":"class", "name":"ranged_weapon", "abstract":true},
+            {"@":"class", "name":"longsword", "prototype":"melee_weapon"},
+            {"@":"class", "name":"pistol", "prototype":"ranged_weapon"},
+            {"@":"class", "name":"gunblade", "prototype":["melee_weapon","ranged_weapon"]}
+        ]
+    }
+
+
+]

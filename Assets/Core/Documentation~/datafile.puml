@@ -1,0 +1,52 @@
+@startuml
+class DefList {
+    + Name: string
+    + DefFileNames: string[]
+    + LoadOrderNames: string[]
+}
+
+class DefFile {
+    
+}
+
+class DefPack {
+    
+}
+
+package OnDisk {
+
+package LoadOrder.json {
+
+}
+
+package DefFile.json {
+
+map DefFile_root {
+ 1 =>
+ 2 =>
+ * => ...
+}
+
+json coredefs_01 {
+ "name": "coredefs_01",
+ "version": "0.1.0",
+ "declare": [
+    {"tag":"flammable"},
+    {"tag":"edible"},
+    {"def":"weapon"},
+    {"prop":"uses_ammo"}
+]
+}
+
+json coredefs_02 {
+ "name": "coredefs_02"
+}
+
+DefFile_root::1 --> coredefs_01
+DefFile_root::2 --> coredefs_02
+
+
+}
+
+}
+@enduml

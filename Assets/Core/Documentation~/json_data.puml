@@ -1,0 +1,19 @@
+@startuml
+package InMemory {
+    package Unity {
+        class MonoBehaviour
+        map GameObject {
+            component_1 *-> MonoBehaviour
+        }
+    }
+
+    class StrID {
+        id: int
+        name: string
+    }
+
+    class JThingRef {
+        id: StrID
+    }
+}
+@enduml
