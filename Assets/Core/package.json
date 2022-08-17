@@ -6,16 +6,11 @@
     "unity": "2019.1",
     "documentationUrl": "",
     "changelogUrl": "https://example.com/changelog.html",
-    "licensesUrl": "https://example.com/licensing.html",
+    "license": "MIT",
     "dependencies": {
     },
     "keywords": [
       "tools",
       "utility"
-    ],
-    "author": {
-      "name": "Max Vestrand",
-      "email": "",
-      "url": ""
-    }
+    ]
 }
