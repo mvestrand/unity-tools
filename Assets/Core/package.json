@@ -1,10 +1,10 @@
 {
     "name": "invalid.mvest.unitytools",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "displayName": "MVest Unity Tools",
     "description": "A collection of general tools and extensions for Unity3D.",
     "unity": "2019.1",
-    "documentationUrl": "",
+    "documentationUrl": "https://github.com/mvestrand/unity-tools/blob/main/Assets/Core/README.md",
     "changelogUrl": "https://example.com/changelog.html",
     "license": "MIT",
     "dependencies": {
