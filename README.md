@@ -2,11 +2,7 @@
 
 ## Overview
 
-This is a personal collection of general purpose scripts and tools for Unity. The code in this project is not for any particular purpose, it 
-is just code that I have needed at some point and have decided to clean up for future re-use. This package exists purely for my own personal
-convenience, and I cannot attest to the functionality or efficiency of any of it. I also regularly refactor and change the interfaces of its 
-tools, so I would not recommend using it as whole for anything professional or long-term. However, if you do find any parts of it 
-useful, feel free to copy them and use them for yourself.
+This is a personal collection of general purpose utilities for Unity.
 
 ## Installation
 
