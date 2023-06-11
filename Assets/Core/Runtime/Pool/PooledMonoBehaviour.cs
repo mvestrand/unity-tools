@@ -9,7 +9,7 @@ using MVest.Unity.OdinInspector;
 
 namespace MVest.Unity.Pool {
 
-	public abstract class PooledMonoBehaviour : MonoBehaviour {
+	public class PooledMonoBehaviour : MonoBehaviour {
 
 		[FoldoutGroup("Pooling Settings")]
 		[Tooltip("The hierarchy path to store pooled objects in (the Pool Manager is the root)")]
@@ -128,7 +128,7 @@ namespace MVest.Unity.Pool {
 			prevPooledObject = null;
 		}
 
-		public abstract void Restart();
+		public virtual void Restart() {}
 	}
 
 }
