@@ -6,7 +6,7 @@ using System.Linq;
 namespace MVest.Unity.Pool {
 
 	public sealed class GameObjectPoolManager : MonoBehaviour {
-		private bool _collectionChecks = true;
+		[SerializeField] private bool _collectionChecks = true;
 		private static bool _automaticallyInstantiate = true;
 		private static bool _warnOnMissingPoolManager = true;
 		public bool CollectionChecks { get { return _collectionChecks; } }

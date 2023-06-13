@@ -1,4 +1,8 @@
+using System.Collections.Generic;
+
 using UnityEngine;
+
+
 
 #if ODIN_INSPECTOR
 using Sirenix.OdinInspector;
@@ -8,6 +12,9 @@ using MVest.Unity.OdinInspector;
 
 
 namespace MVest.Unity.Pool {
+	public interface IResettable {
+        void Reset(IResettable original);
+    }
 
 	public class PooledMonoBehaviour : MonoBehaviour {
 
@@ -128,7 +135,37 @@ namespace MVest.Unity.Pool {
 			prevPooledObject = null;
 		}
 
-		public virtual void Restart() {}
+		public virtual void Restart() {
+            ResetComponents(this.gameObject, _prototype.gameObject);
+        }
+
+
+
+    	static List<IResettable> instanceResettables = new List<IResettable>();
+    	static List<IResettable> originalResettables = new List<IResettable>();
+
+		public static void ResetComponents(GameObject instance, GameObject original) {
+            instanceResettables.Clear();
+            originalResettables.Clear();
+            instance.GetComponentsInChildren<IResettable>(false, instanceResettables);
+            original.GetComponentsInChildren<IResettable>(false, originalResettables);
+            if (instanceResettables.Count != originalResettables.Count) {
+                Debug.LogError($"Cannot reset instance object {instance.ToString()} to original {original.ToString()} because of structural differences.");
+                return;
+            }
+            for (int i = 0; i < instanceResettables.Count; i++) {
+                instanceResettables[i].Reset(originalResettables[i]);
+            }
+            //Debug.Log("Resetting components");
+        }
+
+
+
+
+
+
+
+
 	}
 
 }
