@@ -2,19 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using MVest.Unity.Pool;
+using MVest.Unity.Pooling;
 
-namespace MVest.Unity.Pool.Demo
+namespace MVest.Unity.Pooling.Demo
 {
 
-    public class DestroyAfterTime : MonoBehaviour
+    public class DestroyAfterTime : MonoBehaviour, IResettable
     {
         [SerializeField] float lifetime = 3f;
         [SerializeField] float timeAlive = 0f;
 
-        void OnEnable()
-        {
-            timeAlive = 0f;
+        public void Reset(IResettable original) {
+            DestroyAfterTime o = original as DestroyAfterTime;
+            lifetime = o.lifetime;
+            timeAlive = o.timeAlive;
         }
 
         // Update is called once per frame

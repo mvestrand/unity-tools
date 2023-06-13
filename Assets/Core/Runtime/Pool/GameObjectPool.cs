@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-namespace MVest.Unity.Pool {
+namespace MVest.Unity.Pooling {
 
 	public class GameObjectPool : MonoBehaviour {
 

@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using MVest.Unity.Pool;
+using MVest.Unity.Pooling;
 
-namespace MVest.Unity.Pool.Demo {
+namespace MVest.Unity.Pooling.Demo {
 
 public class SphereSpawner : MonoBehaviour {
 

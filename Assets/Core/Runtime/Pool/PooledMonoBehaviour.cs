@@ -11,12 +11,12 @@ using MVest.Unity.OdinInspector;
 #endif
 
 
-namespace MVest.Unity.Pool {
+namespace MVest.Unity.Pooling {
 	public interface IResettable {
         void Reset(IResettable original);
     }
 
-	public class PooledMonoBehaviour : MonoBehaviour {
+	public sealed class PooledMonoBehaviour : MonoBehaviour {
 
 		[FoldoutGroup("Pooling Settings")]
 		[Tooltip("The hierarchy path to store pooled objects in (the Pool Manager is the root)")]
@@ -72,7 +72,7 @@ namespace MVest.Unity.Pool {
 			get { return (_pool != null ? _pool.Prototype._path : this._path); }
 		}
 
-		private PooledMonoBehaviour Get() {
+		public PooledMonoBehaviour Get() {
 			return (Pool != null ? Pool.Get() : Instantiate<PooledMonoBehaviour>(this));
 		}
 
@@ -90,21 +90,21 @@ namespace MVest.Unity.Pool {
 		}
 
 
-		public T Get<T>() where T : PooledMonoBehaviour {
-			return (T)Get();
-		}
+		// public T Get<T>() where T : PooledMonoBehaviour {
+		// 	return (T)Get();
+		// }
 
-		public T Get<T>(Transform parent) where T : PooledMonoBehaviour {
-			return (T)Get(parent);
-		}
+		// public T Get<T>(Transform parent) where T : PooledMonoBehaviour {
+		// 	return (T)Get(parent);
+		// }
 
-		public T Get<T>(Vector3 position, Quaternion rotation) where T : PooledMonoBehaviour {
-			return (T)Get(position, rotation);
-		}
+		// public T Get<T>(Vector3 position, Quaternion rotation) where T : PooledMonoBehaviour {
+		// 	return (T)Get(position, rotation);
+		// }
 
-		public T Get<T>(Vector3 position, Quaternion rotation, Transform parent) where T : PooledMonoBehaviour {
-			return (T)Get(position, rotation, parent);
-		}
+		// public T Get<T>(Vector3 position, Quaternion rotation, Transform parent) where T : PooledMonoBehaviour {
+		// 	return (T)Get(position, rotation, parent);
+		// }
 
 		public void Release() {
 			if (_pool != null) {
@@ -126,7 +126,7 @@ namespace MVest.Unity.Pool {
 			this._pool?.CancelPreallocate(number);
 		}
 
-		protected virtual void OnDestroy() {
+		private void OnDestroy() {
 			if (_pool != null)
 				_pool.RemoveFromPool(this);
 
@@ -135,7 +135,7 @@ namespace MVest.Unity.Pool {
 			prevPooledObject = null;
 		}
 
-		public virtual void Restart() {
+		public void Restart() {
             ResetComponents(this.gameObject, _prototype.gameObject);
         }
 

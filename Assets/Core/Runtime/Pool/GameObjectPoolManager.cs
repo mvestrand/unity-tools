@@ -3,7 +3,19 @@ using UnityEngine;
 
 using System.Linq;
 
-namespace MVest.Unity.Pool {
+namespace MVest.Unity.Pooling {
+
+	[System.Serializable]
+	public class PrefabPoolSettings {
+        [Tooltip("The base prefab to be duplicated")]
+        public GameObject prefab;
+        [Tooltip("The hierarchy path to store pooled objects in (the Pool Manager is the root)")]
+		public string path;
+		[Tooltip("Minimum size of the pool including active objects")]
+		public int minPoolSize = 0;
+		[Tooltip("Maximum size of the pool including active objects")]
+		public int maxPoolSize = 10000;
+	}
 
 	public sealed class GameObjectPoolManager : MonoBehaviour {
 		[SerializeField] private bool _collectionChecks = true;
