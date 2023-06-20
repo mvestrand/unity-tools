@@ -12,8 +12,8 @@ using MVest.Unity.OdinInspector;
 
 
 namespace MVest.Unity.Pooling {
-	public interface IResettable {
-        void Reset(IResettable original);
+	public interface IRestartable {
+        void Restart(IRestartable original);
     }
 
 	public sealed class PooledMonoBehaviour : MonoBehaviour {
@@ -141,20 +141,20 @@ namespace MVest.Unity.Pooling {
 
 
 
-    	static List<IResettable> instanceResettables = new List<IResettable>();
-    	static List<IResettable> originalResettables = new List<IResettable>();
+    	static List<IRestartable> instanceRestartables = new List<IRestartable>();
+    	static List<IRestartable> originalRestartables = new List<IRestartable>();
 
 		public static void ResetComponents(GameObject instance, GameObject original) {
-            instanceResettables.Clear();
-            originalResettables.Clear();
-            instance.GetComponentsInChildren<IResettable>(false, instanceResettables);
-            original.GetComponentsInChildren<IResettable>(false, originalResettables);
-            if (instanceResettables.Count != originalResettables.Count) {
+            instanceRestartables.Clear();
+            originalRestartables.Clear();
+            instance.GetComponentsInChildren<IRestartable>(false, instanceRestartables);
+            original.GetComponentsInChildren<IRestartable>(false, originalRestartables);
+            if (instanceRestartables.Count != originalRestartables.Count) {
                 Debug.LogError($"Cannot reset instance object {instance.ToString()} to original {original.ToString()} because of structural differences.");
                 return;
             }
-            for (int i = 0; i < instanceResettables.Count; i++) {
-                instanceResettables[i].Reset(originalResettables[i]);
+            for (int i = 0; i < instanceRestartables.Count; i++) {
+                instanceRestartables[i].Restart(originalRestartables[i]);
             }
             //Debug.Log("Resetting components");
         }

@@ -7,12 +7,12 @@ using MVest.Unity.Pooling;
 namespace MVest.Unity.Pooling.Demo
 {
 
-    public class DestroyAfterTime : MonoBehaviour, IResettable
+    public class DestroyAfterTime : MonoBehaviour, IRestartable
     {
         [SerializeField] float lifetime = 3f;
         [SerializeField] float timeAlive = 0f;
 
-        public void Reset(IResettable original) {
+        public void Restart(IRestartable original) {
             DestroyAfterTime o = original as DestroyAfterTime;
             lifetime = o.lifetime;
             timeAlive = o.timeAlive;
