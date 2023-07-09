@@ -1,7 +1,7 @@
 using UnityEngine.Events;
 using UnityEngine;
 
-namespace MVest {
+namespace MVest.Unity {
 	#region Base C# Types
 	// Names use the .NET type names except where Unity does otherwise
 	[System.Serializable] public class UnityBooleanEvent : UnityEvent<bool> { }
